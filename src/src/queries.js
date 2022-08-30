@@ -1,10 +1,10 @@
 const Pool = require('pg').Pool
 const db = new Pool({
-    host: 'containers-us-west-72.railway.app',
-    database:'railway',
-    user:'postgres',
-    password: 'w4iBKp1MfBaOMLg0cDy6',
-    port:7617
+    host: process.env.PGHOST,
+    database:process.env.PGDATABASE,
+    user: process.env.PGUSER,
+    password: process.env.PGPASSWORD,
+    port: process.env.PORT
 })
 
 const getUsuario = (request, response) => {
